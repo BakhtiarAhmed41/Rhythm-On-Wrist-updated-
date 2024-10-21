@@ -1,0 +1,22 @@
+img{
+    max-width: 100%;
+    height: auto;
+    padding: 5%;
+}
+.fa-star,
+.fa-star-half{
+    color: blue;
+    padding: 3% 0%;
+}
+.card shadow{
+    background-color : maroon;
+}
+#cart_count{
+    text-align: right;
+    padding: 0 0.9rem 0.1rem 0.9rem;
+    border-radius: 3rem;
+    text-align: end;
+}
+.shopping-cart{
+padding: 3% 0;
+}
