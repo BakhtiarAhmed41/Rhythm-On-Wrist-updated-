@@ -1,12 +1,12 @@
-<?php
-session_start();
- if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-    $loggedin = true;
- }
- else {
-    $loggedin = false;
- }
- ?>
+<!-- <?php
+// session_start();
+//  if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+//     $loggedin = true;
+//  }
+//  else {
+//     $loggedin = false;
+//  }
+ ?> -->
 
 
 
@@ -340,42 +340,82 @@ For tablets and larger screens
 
 
 <body>
-<?php
 
-    echo '<header>
-        <div class="header">
-            <div class="logo" >
-                <a href="watch_store.php">
-                    <img src="logo.png" alt="logo">
-                </a>
-            </div>
-            <div class="navbar">
-                <nav>
+<?php
+echo '<header>
+    <div class="header">
+        <div class="logo">
+            <a href="watch_store.php">
+                <img src="logo.png" alt="logo">
+            </a>
+        </div>
+        <div class="navbar">
+            <nav>
                 <a href="\Web Engineering Project (Rhythm on Wrist)\watch_store.php">Home</a>
                 <a href="\Web Engineering Project (Rhythm on Wrist)\about.php">Our Universe</a>
                 <a href="\Web Engineering Project (Rhythm on Wrist)\shopping\index.php">Watch Collection</a>
                 <a href="\Web Engineering Project (Rhythm on Wrist)\shopping\checkout.php">Checkout</a>
                 <a href="\Web Engineering Project (Rhythm on Wrist)\contact.php">Contact Us</a>
-                </nav>
-            </div>';
-
-            if($loggedin){
-            echo'<div class="contactbtn">
-                <a href="\Web Engineering Project (Rhythm on Wrist)\logout.php" style="cursor: pointer;"> <button href="\Web Engineering Project (Rhythm on Wrist)\contact.php" event="Onclick" style="width: 100px; font-size: 17px; font-weight: bold; cursor: pointer;">  Logout  </button> </a>
-            </div>';
-            }
-            
-            if(!$loggedin){
-            echo'<div class="contactbtn">
-                <a href="\Web Engineering Project (Rhythm on Wrist)\login.php" style="cursor: pointer;"> <button href="\Web Engineering Project (Rhythm on Wrist)\contact.php" event="Onclick" style="width: 100px; font-size: 17px; font-weight: bold; cursor: pointer;">  Login  </button> </a>
-            </div>';
-            }
-       echo' </div>
-    </header>';
- 
+            </nav>
+        </div>
+        <div class="contactbtn" id="auth-button-container">
+            <button id="auth-button" style="width: 100px; font-size: 17px; font-weight: bold; cursor: pointer;">
+                Loading...
+            </button>
+        </div>
+    </div>
+</header>';
 ?>
 
+<!-- Initialize Clerk -->
+<script 
+    async 
+    crossorigin="anonymous" 
+    data-clerk-publishable-key="pk_test_YXdhcmUtbW9vc2UtNTIuY2xlcmsuYWNjb3VudHMuZGV2JA" 
+    src="https://aware-moose-52.clerk.accounts.dev/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
+    type="text/javascript">
+</script>
 
+<script type="text/javascript">
+window.addEventListener('load', async function() {
+    try {
+        await window.Clerk.load();
+        updateAuthButton();
+        
+        // Listen for auth state changes
+        window.Clerk.addListener(({ user }) => {
+            updateAuthButton();
+        });
+    } catch (error) {
+        console.error('Error loading Clerk:', error);
+    }
+});
+
+function updateAuthButton() {
+    const button = document.getElementById('auth-button');
+    const container = document.getElementById('auth-button-container');
+    
+    if (window.Clerk.user) {
+        // User is signed in
+        button.textContent = 'Logout';
+        button.onclick = async () => {
+            try {
+                await window.Clerk.signOut();
+                // Redirect to home page after sign out
+                window.location.href = '/Web Engineering Project (Rhythm on Wrist)/watch_store.php';
+            } catch (error) {
+                console.error('Error signing out:', error);
+            }
+        };
+    } else {
+        // User is not signed in
+        button.textContent = 'Login';
+        button.onclick = () => {
+            window.location.href = '/Web Engineering Project (Rhythm on Wrist)/auth/login.html';
+        };
+    }
+}
+</script>
 
 
 

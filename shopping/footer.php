@@ -252,7 +252,7 @@
 
 
             <div class="contactbtn" style="margin-top: 20px; margin-left: 10px;">
-            <a href="watch_store.php"><button href="watch_store.php"> 
+            <a href="../watch_store.php"><button href="watch_store.php"> 
                         Explore Watches  </button> </a>
             </div>
 
@@ -271,7 +271,7 @@
             </div>
 
             <div class="contactbtn" style="margin-top: 13px; margin-left: 30px;">
-            <a href="contact.php"><button href="contact.php"> 
+            <a href="../contact.php"><button href="../contact.php"> 
                         Send us a message  </button> </a>
             </div>
 
