@@ -15,5 +15,6 @@
 10. After that, u just need to run 'chainlit run chatbot.py'. A new window will open with chatbot interface
 
 #Note
+
 The chatbot is still in the process of training and experimentation and may cause some errors as it is very less trained yet.  
 
