@@ -1,16 +1,3 @@
-<!-- <?php
-// session_start();
-//  if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-//     $loggedin = true;
-//  }
-//  else {
-//     $loggedin = false;
-//  }
- ?> -->
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <title>Rhythm on Wrist</title>
     <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -37,10 +24,10 @@
     height: 400px;
 }
 
-.header_img{
+.header_vid{
     width: 100%;
-    height: 560px;
-    object-fit: fill;
+    height: 600px;
+    object-fit: cover;
     
 }
 
@@ -86,9 +73,6 @@
 }
 
 
-
-
-/* Media Queries */
 
 /* For mobile devices */
 @media (max-width: 767px) {
@@ -179,7 +163,8 @@ function updateAuthButton() {
 
 
     <div class="header-image">
-        <img  class="header_img" src="Main page/Front photo/PXL_20230616_110219519.PORTRAIT.jpg" alt="header image">
+        <!-- <video  class="header_img" src="Main page/Front photo/PXL_20230616_110219519.PORTRAIT.jpg" alt="header image"> -->
+            <video class="header_vid" src="Display watch.mp4" autoplay muted loop alt="header video"></video>
     </div>
 
     <div class="watch_display1">

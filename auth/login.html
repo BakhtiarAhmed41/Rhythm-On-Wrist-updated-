@@ -6,6 +6,10 @@
     <title>Login - Rhythm on Wrist</title>
     <style>
       
+    body{
+        background-color: rgb(28, 27, 39);
+    }
+
     .error {
         color: red;
         padding: 20px;
@@ -20,7 +24,9 @@
     }
     </style>
 </head>
+
 <body>
+
     <div id="app"></div>
 
     <script 
@@ -33,9 +39,7 @@
 
     <script>
     const HOME_URL = "/Web%20Engineering%20Project%20(Rhythm%20on%20Wrist)/Watch_Store.php";
-    // const SIGN_UP_URL = "/Web%20Engineering%20Project%20(Rhythm%20on%20Wrist)/auth/signup.html";
-
-    // Force redirect for authenticated users
+    
     function redirectIfAuthenticated() {
         if (window.Clerk?.user) {
             window.location.replace(HOME_URL);
@@ -44,7 +48,7 @@
         return false;
     }
 
-    // Check authentication status periodically
+   
     function startAuthCheck() {
         const checkInterval = setInterval(() => {
             if (redirectIfAuthenticated()) {
@@ -52,20 +56,20 @@
             }
         }, 100);
         
-        // Clear interval after 5 seconds to prevent infinite checking
+  
         setTimeout(() => clearInterval(checkInterval), 5000);
     }
 
     window.addEventListener('load', async function () {
         try {
-            // Show loading state
+ 
             document.getElementById('app').innerHTML = `
                 <div style="text-align: center;">
                     <p>Loading authentication...</p>
                 </div>
             `;
 
-            // Initialize Clerk with configuration options
+      
             const clerkOptions = {
                 afterSignInUrl: HOME_URL,
                 afterSignUpUrl: HOME_URL,
@@ -75,20 +79,20 @@
 
             await window.Clerk.load(clerkOptions);
             
-            // Check for authenticated user
+
             if (redirectIfAuthenticated()) return;
 
-            // Start periodic checks
+
             startAuthCheck();
 
-            // Set up auth state change listener
+
             window.Clerk.addListener(({ user }) => {
                 if (user) {
                     window.location.replace(HOME_URL);
                 }
             });
 
-            // Mount the sign-in component
+
             document.getElementById('app').innerHTML = `<div id="sign-in"></div>`;
             const signInDiv = document.getElementById('sign-in');
             window.Clerk.mountSignIn(signInDiv, {
@@ -96,7 +100,6 @@
                 afterSignUpUrl: HOME_URL,
                 redirectUrl: HOME_URL,
                 routing: "hash",
-                // signUpUrl: SIGN_UP_URL,
                 appearance: {
                     elements: {
                         rootBox: {
@@ -126,7 +129,7 @@
         }
     });
 
-    // Visibility change handler
+
     document.addEventListener('visibilitychange', () => {
         if (!document.hidden) {
             redirectIfAuthenticated();

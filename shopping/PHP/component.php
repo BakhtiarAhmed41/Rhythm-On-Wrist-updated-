@@ -3,7 +3,7 @@ function component($productname, $productprice, $productimg, $productid){
     $element = "
     <div class=\"col-md-3 col-sm-6 my-7 my-md-0\">
         <form action=\"index.php\" method=\"post\">
-            <div class=\"card shadow\">
+            <div class=\"card shadow\" >
                 <div>
                     <img src=\"$productimg\" alt=\"image\" class=\"img-fluid card-img-top\">
                 </div>
@@ -32,3 +32,4 @@ function component($productname, $productprice, $productimg, $productid){
 
     echo $element;
 }
+?>

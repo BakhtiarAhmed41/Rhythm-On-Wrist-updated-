@@ -247,7 +247,7 @@
 
                 <a href="checkout.php">Checkout</a>
 
-                <a href="contact.php">Contact</a>
+                <a href="../contact.php">Contact</a>
             </p>
 
 

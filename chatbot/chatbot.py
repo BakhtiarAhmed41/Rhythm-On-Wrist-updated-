@@ -11,7 +11,6 @@ import os
 import re
 from sqlalchemy.exc import SQLAlchemyError
 
-# Website context and information
 WEBSITE_CONTEXT = """
 Rhythm on Wrist is a premier online watch selling platform established in 2020, dedicated to providing luxury and quality timepieces to watch enthusiasts worldwide. Our platform offers:
 
@@ -50,15 +49,15 @@ Rhythm on Wrist is a premier online watch selling platform established in 2020, 
 Our mission is to make luxury timepieces accessible while ensuring authenticity and customer satisfaction. We pride ourselves on our extensive collection, competitive prices, and exceptional customer service.
 """
 
-# Set your Gemini API key
+
 os.environ['GOOGLE_API_KEY'] = os.getenv('GEMINI_API_KEY')
 
-# Connection string for MySQL with no password
+
 cs = os.getenv('DATABASE_URL')
 db_engine = create_engine(cs)
 db = SQLDatabase(db_engine)
 
-# Initialize the Gemini model with context
+
 llm = ChatGoogleGenerativeAI(
     model="gemini-pro",
     temperature=0.0,
@@ -68,7 +67,7 @@ llm = ChatGoogleGenerativeAI(
 
 def get_context_enhanced_response(query: str) -> str:
     """Combine database results with website context"""
-    # Create a prompt that includes website context
+ 
     enhanced_prompt = f"""
     Using the following context about Rhythm on Wrist, along with the database information, please answer the query:
 
@@ -80,19 +79,19 @@ def get_context_enhanced_response(query: str) -> str:
 
 def clean_response(response: str) -> str:
     """Clean the response to remove SQL artifacts and brackets"""
-    # Remove SQL-related prefixes
+  
     response = response.replace("SQLQuery:", "").replace("SQLResult:", "").strip()
     
-    # Remove brackets and extra whitespace
+   
     response = re.sub(r'[\[\](){}]', '', response)
     
-    # Convert tuple-like strings to natural language
+
     response = re.sub(r'\'(\w+)\',\s*', r'\1, ', response)
     
-    # Clean up any remaining artifacts
-    response = response.replace("'", "").replace('"', "")
+
+    response = response.replace("'", "")
     
-    # Remove multiple spaces
+
     response = ' '.join(response.split())
     
     return response
@@ -126,7 +125,7 @@ def get_chat_response(message: str) -> str:
 
 @cl.on_chat_start
 async def on_chat_start():
-    # Initialize the database chain with custom prompt
+
     db_chain = SQLDatabaseChain.from_llm(
         llm=llm,
         db=db,
@@ -152,16 +151,16 @@ async def on_message(message: cl.Message):
         thinking_msg = cl.Message(content="Let me check that for you...")
         await thinking_msg.send()
         
-        # Enhance the query with context
+    
         enhanced_query = get_context_enhanced_response(message.content)
         
-        # Get the raw response
+
         response = runnable.run(
             enhanced_query,
             callbacks=[cl.LangchainCallbackHandler()]
         )
         
-        # Clean and format the response
+
         cleaned_response = clean_response(response)
         
         if "SELECT" in cleaned_response or "FROM" in cleaned_response:

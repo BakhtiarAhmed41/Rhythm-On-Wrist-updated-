@@ -238,21 +238,21 @@
 
         <div class="footer-left">
 
-            <a href="watch_store.php" style="text-decoration: none;"><h3>RhythmOn<span>Wrist</span></h3> </a>
+            <a href="../watch_store.php" style="text-decoration: none;"><h3>RhythmOn<span>Wrist</span></h3> </a>
 
             <p class="footer-links">
-                <a href="watch_store.php">Home</a>
+                <a href="../watch_store.php">Home</a>
 
                 <a href="about.php">About</a>
 
-                <a href="shopping/checkout.php">Checkout</a>
+                <a href="checkout.php">Checkout</a>
 
                 <a href="contact.php">Contact</a>
             </p>
 
 
-            <div class="contactbtn" style="margin-top: 20px; margin-left: 10px;">
-            <a href="watch_store.php"><button href="watch_store.php"> 
+            <div class="contactbtn" style="margin-top: 20px; width: 150px;">
+            <a href="../watch_store.php"><button href="watch_store.php"> 
                         Explore Watches  </button> </a>
             </div>
 
@@ -270,8 +270,8 @@
                 <p>fawadtariq@gmail.com</p> </a>
             </div>
 
-            <div class="contactbtn" style="margin-top: 13px; margin-left: 30px;">
-            <a href="contact.php"><button href="contact.php"> 
+            <div class="contactbtn" style="margin-top: 13px; width: 170px;">
+            <a href="../contact.php"><button href="../contact.php"> 
                         Send us a message  </button> </a>
             </div>
 

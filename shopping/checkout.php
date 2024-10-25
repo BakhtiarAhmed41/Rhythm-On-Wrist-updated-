@@ -1,5 +1,4 @@
 <?php
-require_once("PHP/alert.php");
 session_start();
 ?>
 
@@ -11,9 +10,15 @@ session_start();
     <title>Checkout</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../icon.png">
     <script async crossorigin="anonymous" data-clerk-publishable-key="pk_test_YXdhcmUtbW9vc2UtNTIuY2xlcmsuYWNjb3VudHMuZGV2JA"
         src="https://aware-moose-52.clerk.accounts.dev/npm/@clerk/clerk-js@latest/dist/clerk.browser.js" type="text/javascript">
     </script>
+    <style>
+        body{
+            background-color: rgb(28, 27, 39);
+        }
+    </style>
 </head>
 <body>
     <script>
@@ -30,7 +35,7 @@ session_start();
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
-                <h2>Checkout</h2>
+                <h2 style = "color: white;">Checkout</h2>
                 <hr>
                 <div class="card">
                     <div class="card-body">
@@ -52,7 +57,7 @@ session_start();
 
                                 // Check if the user is logged in
                                 if (!isset($_SESSION['cart'])) {
-                                    echo '<script>display_alert("Please Select any item first!"); window.location.href = "index.php";</script>';
+                                    echo '<script>alert("Please Select any item first!"); window.location.href = "index.php";</script>';
                                 }
 
                                 $total = 0;

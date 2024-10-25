@@ -30,7 +30,6 @@ function cartelement($productimg, $productname, $productprice, $productid, $cart
 
 $db = new createdb('rhythm_on_wrist', 'producttb');
 
-// Handle cart item removal
 if (isset($_SESSION['cart']) && isset($_GET['action']) && $_GET['action'] === 'remove') {
     if (isset($_GET['id']) && isset($_GET['index'])) {
         $cart_index = $_GET['index'];
@@ -44,7 +43,6 @@ if (isset($_SESSION['cart']) && isset($_GET['action']) && $_GET['action'] === 'r
     }
 }
 
-// Calculate cart totals
 $total = 0;
 $count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
 ?>
@@ -59,7 +57,12 @@ $count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../icon.png">
     <style>
+        body {
+            background-color: rgb(28, 27, 39);
+        }
+
         .custom-width {
             width: 50%;
             margin-left: 90px;
@@ -68,26 +71,24 @@ $count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
     </style>
 </head>
 
-<body class="bg-light">
+<body>
     <?php require_once('PHP/header.php'); ?>
     
     <div class="container-fluid">
         <div class="row p-5">
             <div class="col-md-7">
                 <div class="shopping-cart">
-                    <h6>MY CART</h6>
+                    <h6 style = "color: white">MY CART</h6>
                     <hr>
                     <?php
                     if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
                         $result = $db->getdata();
                         $products = [];
                         
-                        // Fetch all products for faster lookup
                         while ($row = mysqli_fetch_assoc($result)) {
                             $products[$row['id']] = $row;
                         }
                         
-                        // Display each cart item
                         foreach ($_SESSION['cart'] as $index => $item) {
                             if (isset($products[$item['product_id']])) {
                                 $product = $products[$item['product_id']];
