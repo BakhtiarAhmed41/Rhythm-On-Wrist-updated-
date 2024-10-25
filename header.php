@@ -11,9 +11,9 @@
 </head>
 
 <style>
-/* General Styles */
+
 header {
-    height: auto; /* Allow height to adjust based on content */
+    height: auto; 
     width: 100%;
 }
 
@@ -22,150 +22,146 @@ header {
     align-items: center;
     justify-content: space-between;
     background-color: #182236;
-    padding: 10px 20px; /* Add padding for better spacing */
+    padding: 10px 20px; 
 }
 
 .logo {
-    flex: 1; /* Allow logo to take available space */
+    flex: 1; 
 }
 
 .logo img {
-    width: 150px; /* Default logo size */
-    height: auto; /* Maintain aspect ratio */
+    width: 150px;
+    height: auto; 
 }
 
 .navbar {
-    flex: 2; /* Navbar takes more space */
-    display: flex;
-    justify-content: center; /* Center the navbar items */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    flex: 2; 
+    justify-content: center; 
+    flex-wrap: wrap; 
 }
 
 .navbar a {
-    padding: 0 10px; /* Horizontal padding for links */
+    padding: 0 10px; 
     text-decoration: none;
     color: white;
     font-weight: bold;
-    transition: color 0.3s; /* Smooth transition for hover effect */
+    transition: color 0.3s;
 }
 
 .navbar a:hover {
-    color: red; /* Change color on hover */
+    color: red; 
 }
 
 .contactbtn {
-    flex: 1; /* Allow contact button to take available space */
+    flex: 1; 
     display: flex;
-    justify-content: flex-end; /* Align button to the right */
+    justify-content: flex-end; 
 }
 
 .contactbtn button {
-    width: 100px; /* Default button width */
-    height: 40px; /* Default button height */
+    width: 100px;
+    height: 40px; 
     background-color: red;
     color: white;
     font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    transition: background-color 0.3s; 
 }
 
 .contactbtn button:hover {
-    background-color: darkred; /* Darker color on hover */
+    background-color: darkred; 
 }
 
-/* Media Queries */
 
-/* For tablets and small laptops */
 @media (max-width: 1024px) {
     .header {
-        flex-direction: column; /* Stack items vertically */
-        align-items: flex-start; /* Align items to the start */
+        flex-direction: column; 
+        align-items: flex-start; 
     }
 
     .logo {
-        margin-bottom: 10px; /* Space below logo */
+        margin-bottom: 10px; 
     }
 
     .navbar {
-        justify-content: flex-start; /* Align navbar items to the start */
-        width: 100%; /* Full width for navbar */
+        justify-content: flex-start; 
+        width: 100%; 
     }
 
     .navbar a {
-        padding: 5px; /* Less padding for links */
-        font-size: 14px; /* Slightly smaller font size */
+        padding: 5px; 
+        font-size: 14px;
     }
 
     .contactbtn {
-        margin-top: 10px; /* Space above button */
+        margin-top: 10px; 
     }
 
     .contactbtn button {
-        width: 80px; /* Smaller button width */
-        height: 35px; /* Smaller button height */
+        width: 80px; 
+        height: 35px; 
     }
 }
 
-/* For mobile devices */
 @media (max-width: 768px) {
     .header {
-        padding: 10px; /* Less padding */
+        padding: 10px; 
     }
 
     .logo img {
-        width: 120px; /* Smaller logo size */
+        width: 120px; 
     }
 
     .navbar {
-        flex-direction: column; /* Stack navbar items */
-        align-items: flex-start; /* Align items to the start */
-        width: 100%; /* Full width for navbar */
+        flex-direction: column; 
+        align-items: flex-start; 
+        width: 100%; 
     }
 
     .navbar a {
-        padding: 5px 0; /* Vertical padding for links */
-        font-size: 12px; /* Smaller font size */
+        padding: 5px 0; 
+        font-size: 12px; 
     }
 
     .contactbtn {
-        margin-top: 10px; /* Space above button */
+        margin-top: 10px; 
     }
 
     .contactbtn button {
-        width: 60px; /* Even smaller button width */
-        height: 30px; /* Smaller button height */
-        font-size: 12px; /* Smaller font size */
+        width: 60px; 
+        height: 30px; 
+        font-size: 12px; 
     }
 }
 
-/* For very small mobile devices */
+
 @media (max-width: 480px) {
     .header {
-        padding: 5px; /* Minimal padding */
+        padding: 5px; 
     }
 
     .logo img {
-        width: 80px; /* Small logo size */
+        width: 80px; 
     }
 
     .navbar {
-        width: 100%; /* Full width for navbar */
+        width: 100%; 
     }
 
     .navbar a {
-        padding: 3px 0; /* Minimal vertical padding */
-        font-size: 10px; /* Smaller font size */
+        padding: 3px 0; 
+        font-size: 10px;
     }
 
     .contactbtn {
-        margin-top: 5px; /* Space above button */
+        margin-top: 5px; 
     }
 
     .contactbtn button {
-        width: 50px; /* Smallest button width */
-        height: 25px; /* Smallest button height */
-        font-size: 10px; /* Smaller font size */
+        width: 50px; 
+        height: 25px; 
+        font-size: 10px; 
     }
 }
   
@@ -184,7 +180,6 @@ header {
                 <a href="/Web Engineering Project (Rhythm on Wrist)/shopping/index.php">Watch Collection</a>
                 <a href="/Web Engineering Project (Rhythm on Wrist)/shopping/checkout.php">Checkout</a>
                 <a href="/Web Engineering Project (Rhythm on Wrist)/contact.php">Contact Us</a>
-                <a href="/Web Engineering Project (Rhythm on Wrist)/start_chatbot.php">AI Assistant</a>
             </nav>
         </div>
         <div class="contactbtn" id="auth-button-container">
