@@ -11,37 +11,43 @@ import os
 import re
 from sqlalchemy.exc import SQLAlchemyError
 
+
 WEBSITE_CONTEXT = """
-Rhythm on Wrist: Celebrating Time with Luxury Watches
+Rhythm on Wrist is a premier online watch selling platform established in 2020, dedicated to providing luxury and quality timepieces to watch enthusiasts worldwide. Our platform offers:
 
-Welcome to Rhythm on Wrist, your premier online destination for luxury and vintage watches. Established in 2020, we cater to watch enthusiasts worldwide, ensuring a unique shopping experience with a focus on authenticity and quality.
+1. Product Range:
+   - We offer two product categories, Vintage Watches and New Arrivals
+   - Both classic and contemporary timepieces
+   - Watches for all occasions: formal, casual, sports, and special events
+   - Price ranges to suit different budgets while maintaining quality
 
-1. Product Range
-Categories: We specialize in two main categories—Vintage Watches and New Arrivals—featuring exquisite timepieces for every taste.
-Diverse Selection: Our collection includes classic styles and contemporary designs suitable for any occasion, from formal events to everyday wear.
-Affordable Luxury: With a range of price points, we make luxury timepieces accessible to all watch lovers.
-2. Customer Experience
-User-Friendly Interface: Enjoy seamless browsing and purchasing with our intuitive platform.
-Detailed Listings: Each product features comprehensive descriptions and high-quality images to assist in your decision-making.
-Secure Transactions: Our secure payment gateway ensures peace of mind during every purchase.
-Global Shipping: We offer worldwide shipping, delivering authentic watches straight to your doorstep.
-3. Special Features
-Authenticity Assurance: Each watch comes with a certificate of authenticity, guaranteeing its quality.
-Dedicated Support: Our customer support team is available 24/7 to assist you with any inquiries.
-Educational Resources: Access watch care guides and maintenance tips to keep your timepiece in pristine condition.
-Exclusive Promotions: Join our membership program for special discounts and offers.
-4. Services
-Free Shipping: Enjoy free shipping on orders over a specified value.
-Flexible Returns: Our 30-day return policy allows you to shop with confidence.
-Servicing Options: We offer watch servicing and maintenance to keep your collection in top shape.
-Gift Wrapping: Personalized gift-wrapping services are available for special occasions.
-Personal Shopping: Our team is ready to assist you in finding the perfect watch tailored to your needs.
-5. Quality Assurance
-100% Authenticity: All watches sold are guaranteed authentic, passing rigorous quality checks.
-Warranty Coverage: Each timepiece is covered by a warranty for your peace of mind.
-After-Sales Support: We are committed to providing exceptional after-sales service to enhance your shopping experience.
-Our Mission
-At Rhythm on Wrist, our mission is to make luxury watches accessible while ensuring authenticity and unparalleled customer satisfaction. We pride ourselves on our extensive collection, competitive pricing, and exceptional service, committed to enriching your watch-buying journey.
+2. Customer Experience:
+   - User-friendly interface for easy browsing and purchasing
+   - Detailed product descriptions and specifications
+   - High-quality product images from multiple angles
+   - Secure payment gateway
+   - Fast and insured shipping worldwide
+
+3. Special Features:
+   - Authentication certificates for luxury timepieces
+   - 24/7 customer support
+   - Watch care guides and maintenance tips
+   - Special discounts and promotions for members
+
+4. Services:
+   - Free shipping on orders above certain value
+   - 30-day return policy
+   - Watch servicing and maintenance
+   - Gift wrapping options
+   - Personal shopping assistance
+
+5. Quality Assurance:
+   - All watches are 100% authentic
+   - Quality check before shipping
+   - Warranty coverage
+   - After-sales support
+
+Our mission is to make luxury timepieces accessible while ensuring authenticity and customer satisfaction. We pride ourselves on our extensive collection, competitive prices, and exceptional customer service.
 """
 
 
