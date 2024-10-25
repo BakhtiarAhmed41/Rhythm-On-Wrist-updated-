@@ -184,7 +184,7 @@ header {
                 <a href="/Web Engineering Project (Rhythm on Wrist)/shopping/index.php">Watch Collection</a>
                 <a href="/Web Engineering Project (Rhythm on Wrist)/shopping/checkout.php">Checkout</a>
                 <a href="/Web Engineering Project (Rhythm on Wrist)/contact.php">Contact Us</a>
-                <a href="http://localhost:8000/">AI Assistant</a>
+                <a href="/Web Engineering Project (Rhythm on Wrist)/start_chatbot.php">AI Assistant</a>
             </nav>
         </div>
         <div class="contactbtn" id="auth-button-container">

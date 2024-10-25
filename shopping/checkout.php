@@ -1,4 +1,5 @@
 <?php
+require_once("PHP/alert.php");
 session_start();
 ?>
 
@@ -51,7 +52,7 @@ session_start();
 
                                 // Check if the user is logged in
                                 if (!isset($_SESSION['cart'])) {
-                                    echo '<script>alert("Please Select any item first!"); window.location.href = "index.php";</script>';
+                                    echo '<script>display_alert("Please Select any item first!"); window.location.href = "index.php";</script>';
                                 }
 
                                 $total = 0;

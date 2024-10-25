@@ -104,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   
   
   
-  $sql = "INSERT INTO `feedback` (`Name`, `Email`, `PhoneNo`, `Message`) VALUES ('$name', '$email', '$number', '$msg');";
+  $sql = "INSERT INTO `contact` (`Name`, `Email`, `PhoneNo`, `Message`) VALUES ('$name', '$email', '$number', '$msg');";
   $result = mysqli_query($conn, $sql);
 
   if ($result) {
