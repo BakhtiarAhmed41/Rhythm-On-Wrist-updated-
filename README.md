@@ -4,7 +4,7 @@
 2. Download xaampp for allowing the project to run on local host
 3. Start Apache and MySQL servers on xampp
 4. Click on admin button of MySQL Server on Xampp and import the rhytm_on_wrist.sql file present in the database folder in the github repo above
-5. If any error occurs, first create a database named rhytm_on_wrist and then import the rhytm_on_wrist.sql file.
+5. If any error occurs, first create a database named rhytm_on_wrist on phpmyadmin and then import the rhytm_on_wrist.sql file.
 6. After succesfully completing above steps, copy and paste http://localhost/Web%20Engineering%20Project%20(Rhythm%20on%20Wrist)/watch_store.php in the web browser (Xampp servers must be running).
 7. The website will open.
 8. To access the chatbot, you must create an .env file and put below variables in it:
