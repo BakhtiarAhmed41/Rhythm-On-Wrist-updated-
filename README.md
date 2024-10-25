@@ -11,8 +11,8 @@
     GEMINI_API_KEY = AIzaSyCMHUPlN8j_8JD_0Yjlr9--GHWdL-vBZPg
     DATABASE_URL=mysql+pymysql://root@localhost:3306/rhythm_on_wrist
 
-9. Then you must move to the chatbot directory using command cd chatbot (for windows)
-10. After that, u just need to run chainlit run chatbot.py. A new window will open with chatbot interface
+9. Then you must move to the chatbot directory using command 'cd chatbot' (for windows)
+10. After that, u just need to run 'chainlit run chatbot.py'. A new window will open with chatbot interface
 
 #Note
 The chatbot is still in the process of training and experimentation and may cause some errors as it is very less trained yet.  
