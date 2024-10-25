@@ -184,36 +184,8 @@ session_start();
     $loggedin = false;
  }
 
-    echo '<header>
-        <div class="header">
-            <div class="logo" >
-                <a href="watch_store.php">
-                    <img src="logo.png" alt="logo">
-                </a>
-            </div>
-            <div class="navbar">
-                <nav>
-                <a href="\Web Engineering Project (Rhythm on Wrist)\watch_store.php">Home</a>
-                <a href="\Web Engineering Project (Rhythm on Wrist)\about.php">Our Universe</a>
-                <a href="\Web Engineering Project (Rhythm on Wrist)\shopping\index.php">Watch Collection</a>
-                <a href="\Web Engineering Project (Rhythm on Wrist)\shopping\checkout.php">Checkout</a>
-                <a href="\Web Engineering Project (Rhythm on Wrist)\contact.php">Contact Us</a>
-                </nav>
-            </div>';
+  include 'header.php'; 
 
-            if($loggedin){
-            echo'<div class="contactbtn">
-                <a href="\Web Engineering Project (Rhythm on Wrist)\logout.php" style="cursor: pointer;"> <button href="\Web Engineering Project (Rhythm on Wrist)\contact.php" event="Onclick" style="width: 100px; font-size: 17px; font-weight: bold; cursor: pointer;">  Logout  </button> </a>
-            </div>';
-            }
-            
-            if(!$loggedin){
-            echo'<div class="contactbtn">
-                <a href="\Web Engineering Project (Rhythm on Wrist)\login.php" style="cursor: pointer;"> <button href="\Web Engineering Project (Rhythm on Wrist)\contact.php" event="Onclick" style="width: 100px; font-size: 17px; font-weight: bold; cursor: pointer;">  Login  </button> </a>
-            </div>';
-            }
-       echo' </div>
-    </header>';
  
 ?>
     <div class="heading">

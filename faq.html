@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>faq</title>
+</head>
+<style>
+    .faq {
+  margin: 0 auto;
+  padding: 4rem;
+  width: 48rem;
+}
+
+.accordion {
+  .accordion-item {
+    border-bottom: 1px solid white;
+    button[aria-expanded='true'] {
+      border-bottom: 1px solid white;
+    }
+  }
+  .faqbutton {
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 1em 0;
+    color: white;
+    font-size: 1.15rem;
+    font-weight: 400;
+    border: none;
+    background: none;
+    outline: none;
+    &:hover, &:focus {
+      cursor: pointer;
+      color: white;
+      &::after {
+        cursor: pointer;
+        color: white;
+        border: 1px solid white;
+      }
+    }
+    .accordion-title {
+      padding: 1em 1.5em 1em 0;
+    }
+    .icon {
+      display: inline-block;
+      position: absolute;
+      top: 18px;
+      right: 0;
+      width: 22px;
+      height: 22px;
+      border: 1px solid white;
+      border-radius: 22px;
+      &::before {
+        display: block;
+        position: absolute;
+        content: '';
+        top: 9px;
+        left: 5px;
+        width: 10px;
+        height: 2px;
+        background: currentColor;
+      }
+      &::after {
+        display: block;
+        position: absolute;
+        content: '';
+        top: 5px;
+        left: 9px;
+        width: 2px;
+        height: 10px;
+        background: currentColor;
+      }
+    }
+  }
+  .faqbutton[aria-expanded='true'] {
+    color: white;
+    .icon {
+      &::after {
+        width: 0;
+      }
+    }
+    + .accordion-content {
+      opacity: 1;
+      max-height: 9em;
+      transition: all 200ms linear;
+      will-change: opacity, max-height;
+    }
+  }
+  .accordion-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 200ms linear, max-height 200ms linear;
+    will-change: opacity, max-height;
+    p {
+      font-size: 1rem;
+      font-weight: 300;
+      margin: 2em 0;
+      color: white;
+    }
+  }
+}
+</style>
+
+<body>
+
+    <div class="faq" data-aos="fade-down">
+        <h2 style="color: red; text-align: center; font-size: 40px; margin-bottom: 20px;">Frequently Asked Questions</h2>
+        <div class="accordion">
+          <div class="accordion-item">
+            <button class="faqbutton" id="accordion-button-1" aria-expanded="false"><span class="accordion-title">What types of watches do you offer?</span><span class="icon" aria-hidden="true"></span></button>
+            <div class="accordion-content">
+              <p>We offer a diverse collection of luxury, designer, and vintage watches to suit every style and occasion. Explore our categories to find the perfect watch for you!</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="faqbutton" id="accordion-button-2" aria-expanded="false"><span class="accordion-title">Do you provide warranty for your watches?</span><span class="icon" aria-hidden="true"></span></button>
+            <div class="accordion-content">
+              <p>Yes, all of our watches come with a warranty to ensure your satisfaction and confidence in your purchase. Please refer to the warranty information specific to each watch for details.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="faqbutton" id="accordion-button-3" aria-expanded="false"><span class="accordion-title">How can I track my order?</span><span class="icon" aria-hidden="true"></span></button>
+            <div class="accordion-content">
+              <p>Once your order is shipped, you will receive a confirmation email with a tracking link. You can use this link to monitor the status of your delivery.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="faqbutton" id="accordion-button-4" aria-expanded="false"><span class="accordion-title">What is your return policy?</span><span class="icon" aria-hidden="true"></span></button>
+            <div class="accordion-content">
+              <p>If you are not satisfied with your purchase, you can return it within 30 days of receiving it, provided it is in original condition. Please check our return policy for more details.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="faqbutton" id="accordion-button-5" aria-expanded="false"><span class="accordion-title">How can I contact customer support?</span><span class="icon" aria-hidden="true"></span></button>
+            <div class="accordion-content">
+              <p>You can reach our customer support team through the contact form on our website or by emailing support@rhythmonwrist.com. We're here to help!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+</body>
+<script>
+
+    src='https://kit.fontawesome.com/c8e4d183c2.js';
+    
+    
+        const items = document.querySelectorAll(".accordion button");
+    
+    function toggleAccordion() {
+      const itemToggle = this.getAttribute('aria-expanded');
+      
+      for (i = 0; i < items.length; i++) {
+        items[i].setAttribute('aria-expanded', 'false');
+      }
+      
+      if (itemToggle == 'false') {
+        this.setAttribute('aria-expanded', 'true');
+      }
+    }
+    
+    items.forEach(item => item.addEventListener('click', toggleAccordion));
+    </script>
+
+</html>

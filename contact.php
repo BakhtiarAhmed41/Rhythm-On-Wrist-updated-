@@ -82,27 +82,10 @@
 </head>
 <body>
 
-  <header>
-    <div class="header">
-        <div class="logo">
-          <a href="index.php">
-            <img src="logo.png" alt="logo">
-          </a>
-        </div>
-        <div class="navbar">
-        <nav>
-          <a href="\Web Engineering Project (Rhythm on Wrist)\watch_store.php">Home</a>
-          <a href="\Web Engineering Project (Rhythm on Wrist)\about.php">Our Universe</a>
-          <a href="\Web Engineering Project (Rhythm on Wrist)\shopping\index.php">Watch Collection</a>
-          <a href="\Web Engineering Project (Rhythm on Wrist)\shopping\checkout.php">Checkout</a>
-          <a href="\Web Engineering Project (Rhythm on Wrist)\contact.php">Contact Us</a>
-                </nav>
-        </div>
-        <div class="contactbtn">
-            <button href="\Web Engineering Project (Rhythm on Wrist)\watch_store.php"> <a href="\Web Engineering Project (Rhythm on Wrist)\watch_store.php" style="font-size: 13px;"> Checkout Watches </a> </button>
-        </div>
-    </div>
-</header>
+<?php include 'header.php'; ?>
+  
+
+
 <?php
 
   $server = "localhost";
