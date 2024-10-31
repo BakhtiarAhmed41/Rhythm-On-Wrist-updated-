@@ -9,7 +9,7 @@
 7. To access the chatbot, you must create an .env file and put below variables in it:
 
        GEMINI_API_KEY = AIzaSyCMHUPlN8j_8JD_0Yjlr9--GHWdL-vBZPg
-       DATABASE_URL=mysql+pymysql://root@localhost:3306/rhythm_on_wrist
+       DATABASE_URL = mysql+pymysql://root@localhost:3306/rhythm_on_wrist
 
 9. Then you must move to the chatbot directory using command 'cd chatbot' (for windows)
 10. After that, u just need to run 'chainlit run chatbot.py'. A new window will open with chatbot interface
